@@ -16,6 +16,28 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   const [falseAnswer, setFalseAnswer] = useState(0)
   const [showVariants, setShowVariants] = useState(false)
 
+  const nextQuestion = () => {
+    setCurrentQuestion(
+      allQuestion[Math.floor(Math.random() * allQuestion.length)]
+    );
+    setCurrentAnswer('')
+    setShowVariants(false)
+  };
+
+  const checkAnswer = (userAnswer: string) => {
+    
+    if (userAnswer !== currentQuestion.correctAnswer ) {
+    setFalseAnswer(falseAnswer + 1)
+  } else {
+    setTrueAnswer(trueAnswer + 1)
+  }
+}
+
+useEffect(() => {
+  setCurrentQuestion(
+    allQuestion[Math.floor(Math.random() * allQuestion.length)]
+  );
+}, []);
 
   return (
     <div>JSTestPage</div>
