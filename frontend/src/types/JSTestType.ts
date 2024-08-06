@@ -18,7 +18,8 @@ type JSTestType = {
     add_variantE: string,
     add_variantF: string,
     correctAdditionalAnswer: string,
-    example: string
+    example: string,
+    level: string,
 
 }
 

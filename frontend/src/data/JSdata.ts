@@ -21,7 +21,9 @@ const JSdata:JSTestType[] = [
         add_variantE: '',
         add_variantF: '',
         correctAdditionalAnswer: '3',
-        example: 'arr1.length'
+        example: 'arr1.length',
+        level: 'easy',
+
     },
 ]
 
