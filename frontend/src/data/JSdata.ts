@@ -27,3 +27,4 @@ const JSdata:JSTestType[] = [
     },
 ]
 
+export default JSdata;
