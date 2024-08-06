@@ -4,6 +4,7 @@ import JSTestType from "../types/JSTestType";
 
 const JSTestPage: React.FC = (): React.ReactNode => {
   const allQuestion = JSdata;
+  
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [currentQuestion, setCurrentQuestion] = React.useState<JSTestType | any>(

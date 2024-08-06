@@ -25,6 +25,29 @@ const JSdata:JSTestType[] = [
         level: 'easy',
 
     },
+    {
+        initial_data: 'const arr1 = [3, 1, 2]',
+        expected_result: 'arr1 = [1, 2, 3]',
+        task: '',
+        variantA: '.lengnt',
+        variantB: '.byLengnt',
+        variantC: '.sortMin()',
+        variantD: '.sort()',
+        variantE: '',
+        variantF: '',
+        correctAnswer: '.sort()',
+        additional_task: '',
+        add_variantA: '',
+        add_variantB: '',
+        add_variantC: '',
+        add_variantD: '',
+        add_variantE: '',
+        add_variantF: '',
+        correctAdditionalAnswer: '',
+        example: 'arr1.sort()',
+        level: 'easy',
+
+    },
 ]
 
 export default JSdata;

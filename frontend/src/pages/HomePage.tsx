@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
+ 
   return (
     <div className="m-16 items-center flex flex-col gap-8">
       <h2 className=" font-bold text-2xl">What you would like to learn now???</h2>
