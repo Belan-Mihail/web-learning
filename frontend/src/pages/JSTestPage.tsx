@@ -53,7 +53,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   return (
     <div className={`m-8 items-center flex flex-col max-[500px]:gap-4 gap-8`}>
       <div className="text-center items-center">
-        <h3 className="text-2xl">Difficulty</h3>
+        <h3 id="difficulty" className="text-2xl">Difficulty</h3>
         <p className={`text-2xl font-medium ${currentQuestion.level === 'easy' ? 'text-green-400' : currentQuestion.level === 'middle' ? 'text-orange-t00' : 'text-red-300' }`}>{currentQuestion.level === 'easy' ? 'Easy' : currentQuestion.level === 'middle' ? 'Middle' : 'Hard'}</p>
       </div>
       <div className="flex justify-around w-full max-[500px]:flex-col max-[500px]:justify-center max-[500px]:gap-4 max-[500px]:items-center">
@@ -176,6 +176,52 @@ const JSTestPage: React.FC = (): React.ReactNode => {
         >
           {currentQuestion!.variantD}
         </button>
+        {currentQuestion.variantE && (
+          <button
+          onClick={() => {
+            setCurrentAnswer(currentQuestion!.variantE);
+            checkAnswer(currentQuestion!.variantE);
+          }}
+          className={
+            (currentAnswer === currentQuestion!.correctAnswer &&
+              currentAnswer === currentQuestion!.variantE) ||
+            (currentAnswer.length > 0 &&
+              currentAnswer !== currentQuestion!.correctAnswer &&
+              currentQuestion!.correctAnswer === currentQuestion!.variantE)
+              ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+              : currentAnswer !== currentQuestion!.correctAnswer &&
+                currentAnswer === currentQuestion!.variantE
+              ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
+              : "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white"
+          }
+          disabled={currentAnswer.length > 0}
+        >
+          {currentQuestion!.variantE}
+        </button>
+        )}
+        {currentQuestion.variantF && (
+          <button
+          onClick={() => {
+            setCurrentAnswer(currentQuestion!.variantF);
+            checkAnswer(currentQuestion!.variantF);
+          }}
+          className={
+            (currentAnswer === currentQuestion!.correctAnswer &&
+              currentAnswer === currentQuestion!.variantF) ||
+            (currentAnswer.length > 0 &&
+              currentAnswer !== currentQuestion!.correctAnswer &&
+              currentQuestion!.correctAnswer === currentQuestion!.variantF)
+              ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+              : currentAnswer !== currentQuestion!.correctAnswer &&
+                currentAnswer === currentQuestion!.variantF
+              ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
+              : "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white"
+          }
+          disabled={currentAnswer.length > 0}
+        >
+          {currentQuestion!.variantF}
+        </button>
+        )}
       </div>
 
       {currentAnswer && currentQuestion.additional_task && (
@@ -269,6 +315,52 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             >
               {currentQuestion!.add_variantD}
             </button>
+            {currentQuestion.add_variantE && (
+              <button
+              onClick={() => {
+                setCurrentAddAnswer(currentQuestion!.add_variantE);
+                checkAddAnswer(currentQuestion!.add_variantE);
+              }}
+              className={
+                (currentAddAnswer === currentQuestion!.correctAdditionalAnswer &&
+                  currentAddAnswer === currentQuestion!.add_variantE) ||
+                (currentAddAnswer.length > 0 &&
+                  currentAddAnswer !== currentQuestion!.correctAdditionalAnswer &&
+                  currentQuestion!.correctAdditionalAnswer === currentQuestion!.add_variantE)
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                  : currentAddAnswer !== currentQuestion!.correctAdditionalAnswer &&
+                    currentAddAnswer === currentQuestion!.add_variantE
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
+                  : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+              }
+              disabled={currentAddAnswer.length > 0}
+            >
+              {currentQuestion!.add_variantE}
+            </button>
+            )}
+            {currentQuestion.add_variantF && (
+              <button
+              onClick={() => {
+                setCurrentAddAnswer(currentQuestion!.add_variantF);
+                checkAddAnswer(currentQuestion!.add_variantF);
+              }}
+              className={
+                (currentAddAnswer === currentQuestion!.correctAdditionalAnswer &&
+                  currentAddAnswer === currentQuestion!.add_variantF) ||
+                (currentAddAnswer.length > 0 &&
+                  currentAddAnswer !== currentQuestion!.correctAdditionalAnswer &&
+                  currentQuestion!.correctAdditionalAnswer === currentQuestion!.add_variantF)
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                  : currentAddAnswer !== currentQuestion!.correctAdditionalAnswer &&
+                    currentAddAnswer === currentQuestion!.add_variantF
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
+                  : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+              }
+              disabled={currentAddAnswer.length > 0}
+            >
+              {currentQuestion!.add_variantF}
+            </button>
+            )}
           </div>
         </>
       )}
@@ -285,12 +377,13 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           
         )}
       </div>
-      <button
+      <a
+        href="#difficulty"
         className=" font-semibold max-[640px]:text-sm text-2xl border-solid border-2 border-blue-500 p-4 rounded-xl hover:bg-blue-500 hover:text-white  "
         onClick={nextQuestion}
       >
         Next Question
-      </button>
+      </a>
       <div className="m-2 flex gap-4 items-center">
         <p className="text-center">Correct Answer: {trueAnswer}</p>
         <p className="text-center">Incorrect Answer: {falseAnswer}</p>

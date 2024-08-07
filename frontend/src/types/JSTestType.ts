@@ -20,6 +20,7 @@ type JSTestType = {
     correctAdditionalAnswer: string,
     example: string,
     level: string,
+    category: string,
 
 }
 
