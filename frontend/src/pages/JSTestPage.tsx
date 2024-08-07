@@ -11,9 +11,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   >({});
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [currentAddAnswer, setCurrentAddAnswer] = useState("");
+  const [areaValue, setAreaValue] = useState("");
 
   const [trueAnswer, setTrueAnswer] = useState(0);
   const [falseAnswer, setFalseAnswer] = useState(0);
+
+  const [showExample, setShowExample] = useState(false)
 
   const nextQuestion = () => {
     setCurrentQuestion(
@@ -21,6 +24,8 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     );
     setCurrentAnswer("");
     setCurrentAddAnswer('')
+    setShowExample(false)
+    setAreaValue('')
   };
 
   const checkAnswer = (userAnswer: string) => {
@@ -263,7 +268,18 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           </div>
         </>
       )}
-
+      <div className="flex flex-col gap-4">
+        <h3 className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl my-4">try to write it correctly</h3>
+        <textarea value={areaValue} onChange={(e) => setAreaValue(e.target.value)} placeholder="write here" className="bg-gray-300 rounded-lg" cols={50} rows={10}></textarea>
+        <button onClick={() => setShowExample(!showExample)}>
+          {!showExample ? 'Show Example' : 'Hide Example'}
+        </button>
+        {showExample && (
+          
+            <p className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl">{currentQuestion.example}</p>
+          
+        )}
+      </div>
       <button
         className=" font-semibold max-[640px]:text-sm text-2xl border-solid border-2 border-blue-500 p-4 rounded-xl hover:bg-blue-500 hover:text-white  "
         onClick={nextQuestion}
