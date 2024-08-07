@@ -13,7 +13,7 @@ const JSdata:JSTestType[] = [
         variantE: '.lenth',
         variantF: '',
         correctAnswer: '.length',
-        additional_task: 'what will be the length of the arr1?',
+        additional_task: 'what is the length of the arr1?',
         add_variantA: '1',
         add_variantB: '2',
         add_variantC: '3',

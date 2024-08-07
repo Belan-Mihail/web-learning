@@ -51,7 +51,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   }, []);
 
   return (
-    <div className="m-8 items-center flex flex-col max-[500px]:gap-4 gap-8">
+    <div className={`m-8 items-center flex flex-col max-[500px]:gap-4 gap-8`}>
+      <div className="text-center items-center">
+        <h3 className="text-2xl">Difficulty</h3>
+        <p className={`text-2xl font-medium ${currentQuestion.level === 'easy' ? 'text-green-400' : currentQuestion.level === 'middle' ? 'text-orange-t00' : 'text-red-300' }`}>{currentQuestion.level === 'easy' ? 'Easy' : currentQuestion.level === 'middle' ? 'Middle' : 'Hard'}</p>
+      </div>
       <div className="flex justify-around w-full max-[500px]:flex-col max-[500px]:justify-center max-[500px]:gap-4 max-[500px]:items-center">
         <div className="text-start">
           <Link
@@ -67,17 +71,17 @@ const JSTestPage: React.FC = (): React.ReactNode => {
       </div>
       <div>
         {currentQuestion.initial_data && (
-          <p className="font-semibold text-black text-center text-wrap text-2xl my-2">
+          <p className="font-semibold text-orange-400 text-center text-wrap text-2xl my-2">
             You have:
             <br />
-            {currentQuestion?.initial_data}
+            <span className="text-black text-4xl">{currentQuestion?.initial_data}</span>
           </p>
         )}
         {currentQuestion.expected_result && (
-          <p className="font-semibold text-green-500 text-center text-wrap text-2xl my-2">
+          <p className="font-semibold text-blue-800 text-center text-wrap text-2xl my-2">
             Expected result:
             <br />
-            {currentQuestion?.expected_result}
+            <span className="text-blue-800">{currentQuestion?.expected_result}</span>
           </p>
         )}
         {currentQuestion.task && (
@@ -268,9 +272,10 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           </div>
         </>
       )}
-      <div className="flex flex-col gap-4">
-        <h3 className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl my-4">try to write it correctly</h3>
-        <textarea value={areaValue} onChange={(e) => setAreaValue(e.target.value)} placeholder="write here" className="bg-gray-300 rounded-lg" cols={50} rows={10}></textarea>
+      <div className="flex flex-col gap-4 w-[40%] max-[720px]:w-[60%] max-[420px]:w-[70%]">
+        <h3 className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl my-4">try to write the function/method in relation to the given data correctly</h3>
+        <p className="text-center"><a className="text-blue-600" target="_blank" href="https://www.boot.dev/playground/js">Free SandBox</a></p>
+        <textarea value={areaValue} onChange={(e) => setAreaValue(e.target.value)} placeholder="write here" className="bg-gray-300 rounded-lg outline-orange-300" cols={50} rows={10}></textarea>
         <button onClick={() => setShowExample(!showExample)}>
           {!showExample ? 'Show Example' : 'Hide Example'}
         </button>
