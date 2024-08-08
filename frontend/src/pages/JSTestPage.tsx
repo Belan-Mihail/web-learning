@@ -28,6 +28,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     setAreaValue('')
   };
 
+
   const checkAnswer = (userAnswer: string) => {
     if (userAnswer !== currentQuestion.correctAnswer) {
       setFalseAnswer(falseAnswer + 1);
