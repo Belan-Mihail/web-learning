@@ -32,6 +32,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   arr1.unshift('A', 'B')
   console.log(arr1)
 
+
   
 
   const checkAnswer = (userAnswer: string) => {
@@ -378,8 +379,17 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           {!showExample ? 'Show Example' : 'Hide Example'}
         </button>
         {showExample && (
+            <div>
+              {currentQuestion.example.length < 2 ? (
+                <p className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl">{currentQuestion.example}</p>
+              ) : (
+                currentQuestion.example.map((item:string) => (
+                  <p className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl">{item}</p>
+                ))
+              )}
+              
+            </div>
             
-            <p className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl">{currentQuestion.example}</p>
           
         )}
        

@@ -93,7 +93,7 @@ const JSdata:JSTestType[] = [
         add_variantE: '',
         add_variantF: '',
         correctAdditionalAnswer: 'arr1 = ["A", "B", "a", "b", "c"]',
-        example: ['arr1.unshift("D")'],
+        example: ['arr1.unshift("D")', 'arr1.unshift("A", "B")'],
         level: 'easy',
         category: 'array methods',
 
