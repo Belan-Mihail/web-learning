@@ -28,9 +28,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     setAreaValue('')
   };
 
-  const arr1 = ["a", "b", "c"]
-  arr1.unshift('A', 'B')
-  console.log(arr1)
+  
 
 
   
