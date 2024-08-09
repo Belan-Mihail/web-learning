@@ -28,6 +28,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     setAreaValue('')
   };
 
+  const arr1 = ["a", "b", "c"]
+  arr1.unshift('A', 'B')
+  console.log(arr1)
+
+  
 
   const checkAnswer = (userAnswer: string) => {
     if (userAnswer !== currentQuestion.correctAnswer) {
@@ -373,10 +378,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           {!showExample ? 'Show Example' : 'Hide Example'}
         </button>
         {showExample && (
-          
+            
             <p className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl">{currentQuestion.example}</p>
           
         )}
+       
       </div>
       <a
         href="#difficulty"
