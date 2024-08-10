@@ -30,7 +30,6 @@ const JSTestPage: React.FC = (): React.ReactNode => {
 
   
 
-
   
 
   const checkAnswer = (userAnswer: string) => {
@@ -82,6 +81,18 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             <span className="text-black text-4xl">{currentQuestion?.initial_data}</span>
           </p>
         )}
+
+        
+              {currentQuestion.steps && currentQuestion.steps.map((item:string, index: number) => (
+                  <>
+                    <p className="font-semibold text-orange-400 text-center text-wrap text-2xl my-2">Step №{index + 1}</p>
+                    <p className="text-black text-4xl text-center font-semibold">{item}</p>
+                  </>
+                  
+                ))
+              }
+
+
         {currentQuestion.expected_result && (
           <p className="font-semibold text-blue-800 text-center text-wrap text-2xl my-2">
             Expected result:

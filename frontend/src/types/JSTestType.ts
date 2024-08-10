@@ -1,6 +1,7 @@
 
 type JSTestType = {
     initial_data:string,
+    steps: string[],
     expected_result: string,
     task: string,
     variantA: string,

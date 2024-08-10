@@ -4,6 +4,7 @@ import JSTestType from "../types/JSTestType";
 const JSdata:JSTestType[] = [
     {
         initial_data: 'const arr1 = [1, 2, 3]',
+        steps: [],
         expected_result: '',
         task: 'what method to use to find out the length of arr1?',
         variantA: '.length',
@@ -28,6 +29,7 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = [3, 1, 2]',
+        steps: [],
         expected_result: 'arr1 = [1, 2, 3]',
         task: 'how to get the expected result?',
         variantA: '.length',
@@ -52,6 +54,7 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["a", "b", "c"]',
+        steps: [],
         expected_result: '',
         task: 'what method to use to add symbol "d" to the end of arr1?',
         variantA: '.shift(D)',
@@ -76,6 +79,7 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["a", "b", "c"]',
+        steps: [],
         expected_result: 'arr1 = ["D", "a", "b", "c"]',
         task: 'how to get the expected result?',
         variantA: '.shift("D")',
@@ -100,6 +104,7 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["300", "7", "40"].sort()',
+        steps: [],
         expected_result: '',
         task: 'console.log(arr1)',
         variantA: '["300", "7", "40"]',
@@ -123,6 +128,7 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["Mike", "Billy", "Bobby", "Ann"].sort()',
+        steps: [],
         expected_result: '',
         task: 'console.log(arr1)',
         variantA: '["Ann", "Bobby", "Billy", "Mike"]',
@@ -146,6 +152,7 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["Mike", "1", "Mike", "Ann"].reverse()',
+        steps: [],
         expected_result: '',
         task: 'console.log(arr1)',
         variantA: '["Ann", "Mike", "1", "Mike"]',
@@ -169,6 +176,7 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["Mike", "1", "Mike", "Ann"]',
+        steps: [],
         expected_result: 'arr1 = ["Mike", "1", "Mike"]',
         task: 'what method to use?',
         variantA: '.shift()',
@@ -192,6 +200,7 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["a", "b", "c", "d"]',
+        steps: [],
         expected_result: 'how to delete the last element of arr1?',
         task: 'what method to use?',
         variantA: '.arr1.pop()',
@@ -215,9 +224,9 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["c", "D", "m", "K"]',
-        // step: ['const del = arr1.pop()']!!!
+        steps: ['const delete = arr1.pop()'],
         expected_result: '',
-        task: 'const delete = arr1.pop(). What will be console.log(del)',
+        task: 'What will be console.log(del)',
         variantA: '["c", "D", "m"]',
         variantB: 'C',
         variantC: 'k',
@@ -239,9 +248,9 @@ const JSdata:JSTestType[] = [
     },
     {
         initial_data: 'const arr1 = ["a", "b", "c"]',
-        // step: ['const del = arr1.pop()']!!!
+        steps: ['console.log(arr1.shift(a))'],
         expected_result: '',
-        task: 'What will be console.log(arr1.shift(a))',
+        task: 'What will be in console ?',
         variantA: '["a", "a", "b", "c"]',
         variantB: 'mistake',
         variantC: 'a',
@@ -261,6 +270,7 @@ const JSdata:JSTestType[] = [
         level: 'easy',
         category: 'array methods',
     },
+    
 
 ]
 
