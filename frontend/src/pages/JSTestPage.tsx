@@ -29,7 +29,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   };
 
   
-
+  const arr1 = ["dog", "cat", "pig", "cucumber"]
+  arr1.unshift('tiger')
+  arr1.pop()
+  arr1.unshift('duck')
+  arr1.pop()
+  console.log(arr1)
   
 
   const checkAnswer = (userAnswer: string) => {
@@ -58,7 +63,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     <div className={`m-8 items-center flex flex-col max-[500px]:gap-4 gap-8`}>
       <div className="text-center items-center">
         <h3 id="difficulty" className="text-2xl">Difficulty</h3>
-        <p className={`text-2xl font-medium ${currentQuestion.level === 'easy' ? 'text-green-400' : currentQuestion.level === 'middle' ? 'text-orange-t00' : 'text-red-300' }`}>{currentQuestion.level === 'easy' ? 'Easy' : currentQuestion.level === 'middle' ? 'Middle' : 'Hard'}</p>
+        <p className={`text-2xl font-medium ${currentQuestion.level === 'easy' ? 'text-green-400' : currentQuestion.level === 'medium' ? 'text-orange-t00' : 'text-red-300' }`}>{currentQuestion.level === 'easy' ? 'Easy' : currentQuestion.level === 'medium' ? 'Medium' : 'Hard'}</p>
       </div>
       <div className="flex justify-around w-full max-[500px]:flex-col max-[500px]:justify-center max-[500px]:gap-4 max-[500px]:items-center">
         <div className="text-start">
