@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 
 const JSTestPage: React.FC = (): React.ReactNode => {
   const allQuestion = JSdata;
+  const additionalTaskArr:string[] = []
+  allQuestion.map((item) => item.additional_task.length && additionalTaskArr.push(item.additional_task))
+ 
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [currentQuestion, setCurrentQuestion] = React.useState<JSTestType | any
@@ -28,7 +31,9 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     setAreaValue('')
   };
 
-
+  const arr1 = ["boom", "boam", "Baom", "baon"]
+  console.log(arr1.includes('baom'))
+  
   
 
   const checkAnswer = (userAnswer: string) => {
@@ -69,7 +74,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           </Link>
         </div>
         <div className="text-end">
-          <span>total number of questions: {allQuestion.length}</span>
+          <span>total number of questions: {allQuestion.length + additionalTaskArr.length}</span>
         </div>
       </div>
       <div>

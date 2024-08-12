@@ -11,7 +11,7 @@ type JSTestType = {
     variantE: string,
     variantF: string,
     correctAnswer: string,
-    additional_task: string | string[],
+    additional_task: string,
     add_variantA: string,
     add_variantB: string,
     add_variantC: string,
