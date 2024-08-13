@@ -12,6 +12,12 @@ const HomePage = () => {
       >
         JavaScript
       </Link>
+      <Link
+        to="js_test_page"
+        className=" font-semibold text-2xl border-solid border-2 border-blue-500 p-8 rounded-xl hover:bg-blue-500 hover:text-white"
+      >
+        JavaScript
+      </Link>
     </div>
   );
 };
