@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import HomePage from './pages/HomePage.tsx';
 import JSTestPage from './pages/JSTestPage.tsx';
+import JSChoicePage from './pages/JSChoicePage.tsx';
 
 
 const router = createBrowserRouter(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route index={true} element={<HomePage />} />
       
       <Route path="js_test_page" element={<JSTestPage />} />
+      <Route path="js_choice_page" element={<JSChoicePage />} />
       
       
     </Route>
