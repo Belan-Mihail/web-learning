@@ -31,8 +31,8 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     setAreaValue('')
   };
 
-  const arr1 = ["cat", "dog", "duck", "monkey"]
-  console.log(arr1.some((item) => item.includes("on")))
+ 
+
   
   
   
