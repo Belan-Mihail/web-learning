@@ -27,7 +27,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
       ? JSdata.filter((item) => item.level === "hard")
       : JSdata;
 
-  console.log(allQuestion);
+ 
 
   const additionalTaskArr: string[] = [];
   allQuestion.map(
@@ -66,7 +66,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     setCurrentQuestion(
       allQuestion[Math.floor(Math.random() * allQuestion.length)]
     );
-  }, []);
+  }, [allQuestion]);
 
   return (
     <>
