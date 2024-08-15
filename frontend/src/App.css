@@ -1,0 +1,21 @@
+* {
+    background: #292828;
+    color: #f5d52c;
+}
+
+.std-block:hover {
+    box-shadow: 0px 0px 33px 20px #fefefe20;
+    scale: 1.05;
+    transition: .4 ease;
+}
+
+.shd-white {
+    box-shadow: 0px 0px 33px 20px #fefefe20;
+}
+
+/* #747474 */
+/* background: #292828; */
+/* #353535 */
+/* #222121 */
+
+/* #f5d42c40 */

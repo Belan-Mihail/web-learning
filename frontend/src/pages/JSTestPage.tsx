@@ -74,14 +74,14 @@ const JSTestPage: React.FC = (): React.ReactNode => {
         <ChoiceOfDifficult setSelectedDifficult={setSelectedDifficult} />
       ) : (
         <div
-          className={`m-8 items-center flex flex-col max-[500px]:gap-4 gap-8`}
+          className={`m-8 items-center flex flex-col max-[500px]:gap-4 gap-8 bg-[#222121] p-4 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165)]'}`}
         >
-          <div className="text-center items-center">
-            <h3 id="difficulty" className="text-2xl">
+          <div className=" bg-transparent text-center items-center">
+            <h3 id="difficulty" className=" bg-transparent text-2xl">
               Difficulty
             </h3>
             <p
-              className={`text-2xl font-medium ${
+              className={`text-2xl font-medium bg-transparent ${
                 currentQuestion.level === "easy"
                   ? "text-green-400"
                   : currentQuestion.level === "medium"
@@ -96,28 +96,28 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                 : "Hard"}
             </p>
           </div>
-          <div className="flex justify-around w-full max-[500px]:flex-col max-[500px]:justify-center max-[500px]:gap-4 max-[500px]:items-center">
-            <div className="text-start">
+          <div className=" bg-transparent flex justify-around w-full max-[500px]:flex-col max-[500px]:justify-center max-[500px]:gap-4 max-[500px]:items-center">
+            <div className="text-start bg-transparent">
               <Link
                 to="/"
-                className="text-sm border-green-500  border-solid border-2 hover:bg-green-500 hover:text-white p-2 rounded-xl"
+                className=" bg-transparent text-sm border-green-500  border-solid border-2 hover:bg-green-500 hover:text-white p-2 rounded-xl"
               >
                 Back to HomePage
               </Link>
             </div>
-            <div className="text-end">
-              <span>
+            <div className="text-end bg-transparent">
+              <span className="bg-transparent">
                 total number of questions:{" "}
                 {allQuestion.length + additionalTaskArr.length}
               </span>
             </div>
           </div>
-          <div>
+          <div className={`bg-[#292828] my-8 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
             {currentQuestion.initial_data && (
-              <p className="font-semibold text-orange-400 text-center text-wrap text-2xl my-2">
+              <p className="font-semibold text-white text-center text-wrap text-2xl my-2">
                 You have:
                 <br />
-                <span className="text-black text-4xl">
+                <span className=" text-4xl">
                   {currentQuestion?.initial_data}
                 </span>
               </p>
@@ -126,10 +126,10 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             {currentQuestion.steps &&
               currentQuestion.steps.map((item: string, index: number) => (
                 <>
-                  <p className="font-semibold text-orange-400 text-center text-wrap text-2xl my-2">
+                  <p className="font-semibold text-white text-center text-wrap text-2xl my-2">
                     Step №{index + 1}
                   </p>
-                  <p className="text-black text-4xl text-center font-semibold">
+                  <p className=" text-4xl text-center font-semibold">
                     {item}
                   </p>
                 </>
@@ -151,7 +151,8 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             )}
           </div>
 
-          <div className="grid max-[640px]:grid-cols-1 max-[640px]:grid-rows-1 grid-cols-2 grid-rows-2 max-[500px]:gap-4 gap-8">
+          <div className={`grid max-[640px]:grid-cols-1 max-[640px]:grid-rows-1 grid-cols-2 grid-rows-2 max-[500px]:gap-4 gap-8 bg-[#292828] my-8 p-16 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}
+          >
             <button
               onClick={() => {
                 setCurrentAnswer(currentQuestion!.variantA);
@@ -450,7 +451,8 @@ const JSTestPage: React.FC = (): React.ReactNode => {
               </div>
             </>
           )}
-          <div className="flex flex-col gap-4 w-[40%] max-[720px]:w-[60%] max-[420px]:w-[70%]">
+
+          <div className={`flex flex-col gap-4 w-[40%] max-[720px]:w-[60%] max-[420px]:w-[70%] bg-[#292828] my-8 p-16 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
             <h3 className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl my-4">
               try to write the function/method in relation to the given data
               correctly
@@ -498,9 +500,9 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           >
             Next Question
           </a>
-          <div className="m-2 flex gap-4 items-center">
-            <p className="text-center">Correct Answer: {trueAnswer}</p>
-            <p className="text-center">Incorrect Answer: {falseAnswer}</p>
+          <div className="m-2 flex gap-4 items-center bg-transparent">
+            <p className="text-center bg-transparent">Correct Answer: {trueAnswer}</p>
+            <p className="text-center bg-transparent">Incorrect Answer: {falseAnswer}</p>
           </div>
         </div>
       )}
