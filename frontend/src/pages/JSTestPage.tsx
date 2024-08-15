@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import JSdata from "../data/JSdata";
 import JSTestType from "../types/JSTestType";
 import { Link } from "react-router-dom";
+import ChoiceOfDifficult from "../components/ChoiceOfDifficult";
 
 const JSTestPage: React.FC = (): React.ReactNode => {
   const allQuestion = JSdata;
@@ -20,6 +21,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   const [falseAnswer, setFalseAnswer] = useState(0);
 
   const [showExample, setShowExample] = useState(false)
+  const [selectedDifficult, setSelectedDifficult] = useState('')
 
   const nextQuestion = () => {
     setCurrentQuestion(
@@ -60,7 +62,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   }, []);
 
   return (
-    <div className={`m-8 items-center flex flex-col max-[500px]:gap-4 gap-8`}>
+    <>
+    {!selectedDifficult ? (
+      <ChoiceOfDifficult setSelectedDifficult={setSelectedDifficult}  />
+    ) : (
+      <div className={`m-8 items-center flex flex-col max-[500px]:gap-4 gap-8`}>
       <div className="text-center items-center">
         <h3 id="difficulty" className="text-2xl">Difficulty</h3>
         <p className={`text-2xl font-medium ${currentQuestion.level === 'easy' ? 'text-green-400' : currentQuestion.level === 'medium' ? 'text-orange-500' : 'text-red-300' }`}>{currentQuestion.level === 'easy' ? 'Easy' : currentQuestion.level === 'medium' ? 'Medium' : 'Hard'}</p>
@@ -420,6 +426,8 @@ const JSTestPage: React.FC = (): React.ReactNode => {
         <p className="text-center">Incorrect Answer: {falseAnswer}</p>
       </div>
     </div>
+    )}
+  </>
   );
 };
 
