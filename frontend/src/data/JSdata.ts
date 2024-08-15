@@ -226,7 +226,7 @@ const JSdata:JSTestType[] = [
         initial_data: 'const arr1 = ["c", "D", "m", "K"]',
         steps: ['const delete = arr1.pop()'],
         expected_result: '',
-        task: 'What will be console.log(del)',
+        task: 'What will be console.log(delete)',
         variantA: '["c", "D", "m"]',
         variantB: 'C',
         variantC: 'k',

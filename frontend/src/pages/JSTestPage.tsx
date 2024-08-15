@@ -66,7 +66,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     setCurrentQuestion(
       allQuestion[Math.floor(Math.random() * allQuestion.length)]
     );
-  }, [allQuestion]);
+  }, []);
 
   return (
     <>
@@ -169,11 +169,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                 (currentAnswer.length > 0 &&
                   currentAnswer !== currentQuestion!.correctAnswer &&
                   currentQuestion!.correctAnswer === currentQuestion!.variantA)
-                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                   : currentAnswer !== currentQuestion!.correctAnswer &&
                     currentAnswer === currentQuestion!.variantA
-                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                  : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                  : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
               }
               disabled={currentAnswer.length > 0}
             >
@@ -190,11 +190,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                 (currentAnswer.length > 0 &&
                   currentAnswer !== currentQuestion!.correctAnswer &&
                   currentQuestion!.correctAnswer === currentQuestion!.variantB)
-                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500  p-4 rounded-xl"
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500  p-4 rounded-xl text-white"
                   : currentAnswer !== currentQuestion!.correctAnswer &&
                     currentAnswer === currentQuestion!.variantB
-                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500  p-4 rounded-xl"
-                  : "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl disabled:hover:bg-transparent disabled:hover:text-black   hover:bg-orange-500 hover:text-white"
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500  p-4 rounded-xl text-white"
+                  : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
               }
               disabled={currentAnswer.length > 0}
             >
@@ -211,11 +211,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                 (currentAnswer.length > 0 &&
                   currentAnswer !== currentQuestion!.correctAnswer &&
                   currentQuestion!.correctAnswer === currentQuestion!.variantC)
-                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                   : currentAnswer !== currentQuestion!.correctAnswer &&
                     currentAnswer === currentQuestion!.variantC
-                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                  : "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white"
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                  : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
               }
               disabled={currentAnswer.length > 0}
             >
@@ -232,11 +232,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                 (currentAnswer.length > 0 &&
                   currentAnswer !== currentQuestion!.correctAnswer &&
                   currentQuestion!.correctAnswer === currentQuestion!.variantD)
-                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                   : currentAnswer !== currentQuestion!.correctAnswer &&
                     currentAnswer === currentQuestion!.variantD
-                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                  : "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white"
+                  ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                  : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
               }
               disabled={currentAnswer.length > 0}
             >
@@ -255,11 +255,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                     currentAnswer !== currentQuestion!.correctAnswer &&
                     currentQuestion!.correctAnswer ===
                       currentQuestion!.variantE)
-                    ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                    ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                     : currentAnswer !== currentQuestion!.correctAnswer &&
                       currentAnswer === currentQuestion!.variantE
-                    ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                    : "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white"
+                    ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                    : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
                 }
                 disabled={currentAnswer.length > 0}
               >
@@ -279,11 +279,11 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                     currentAnswer !== currentQuestion!.correctAnswer &&
                     currentQuestion!.correctAnswer ===
                       currentQuestion!.variantF)
-                    ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                    ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                     : currentAnswer !== currentQuestion!.correctAnswer &&
                       currentAnswer === currentQuestion!.variantF
-                    ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                    : "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white"
+                    ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                    : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
                 }
                 disabled={currentAnswer.length > 0}
               >
@@ -313,12 +313,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                         currentQuestion!.correctAdditionalAnswer &&
                       currentQuestion!.correctAdditionalAnswer ===
                         currentQuestion!.add_variantA)
-                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                       : currentAddAnswer !==
                           currentQuestion!.correctAdditionalAnswer &&
                         currentAddAnswer === currentQuestion!.add_variantA
-                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                      : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                      : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
                   }
                   disabled={currentAddAnswer.length > 0}
                 >
@@ -338,12 +338,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                         currentQuestion!.correctAdditionalAnswer &&
                       currentQuestion!.correctAdditionalAnswer ===
                         currentQuestion!.add_variantB)
-                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                       : currentAddAnswer !==
                           currentQuestion!.correctAdditionalAnswer &&
                         currentAddAnswer === currentQuestion!.add_variantB
-                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                      : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                      : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
                   }
                   disabled={currentAddAnswer.length > 0}
                 >
@@ -363,12 +363,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                         currentQuestion!.correctAdditionalAnswer &&
                       currentQuestion!.correctAdditionalAnswer ===
                         currentQuestion!.add_variantC)
-                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                       : currentAddAnswer !==
                           currentQuestion!.correctAdditionalAnswer &&
                         currentAddAnswer === currentQuestion!.add_variantC
-                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                      : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                      : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
                   }
                   disabled={currentAddAnswer.length > 0}
                 >
@@ -388,12 +388,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                         currentQuestion!.correctAdditionalAnswer &&
                       currentQuestion!.correctAdditionalAnswer ===
                         currentQuestion!.add_variantD)
-                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                       : currentAddAnswer !==
                           currentQuestion!.correctAdditionalAnswer &&
                         currentAddAnswer === currentQuestion!.add_variantD
-                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                      : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+                      ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                      : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
                   }
                   disabled={currentAddAnswer.length > 0}
                 >
@@ -414,12 +414,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                           currentQuestion!.correctAdditionalAnswer &&
                         currentQuestion!.correctAdditionalAnswer ===
                           currentQuestion!.add_variantE)
-                        ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                        ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                         : currentAddAnswer !==
                             currentQuestion!.correctAdditionalAnswer &&
                           currentAddAnswer === currentQuestion!.add_variantE
-                        ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                        : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+                        ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                        : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c] `
                     }
                     disabled={currentAddAnswer.length > 0}
                   >
@@ -441,12 +441,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
                           currentQuestion!.correctAdditionalAnswer &&
                         currentQuestion!.correctAdditionalAnswer ===
                           currentQuestion!.add_variantF)
-                        ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl"
+                        ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-green-500 p-4 rounded-xl text-white"
                         : currentAddAnswer !==
                             currentQuestion!.correctAdditionalAnswer &&
                           currentAddAnswer === currentQuestion!.add_variantF
-                        ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl"
-                        : " font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 border-orange-500 p-4 rounded-xl hover:bg-orange-500 disabled:hover:bg-transparent disabled:hover:text-black hover:text-white  "
+                        ? "font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 bg-red-500 p-4 rounded-xl text-white"
+                        : `font-semibold text-center text-wrap max-[640px]:text-sm text-2xl border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} disabled:hover:shadow-none disabled:hover:text-[#f5d52c]`
                     }
                     disabled={currentAddAnswer.length > 0}
                   >
@@ -464,7 +464,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             </h3>
             <p className="text-center">
               <a
-                className="text-blue-600"
+                className={`${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'}`}
                 target="_blank"
                 href="https://www.boot.dev/playground/js"
               >
@@ -500,7 +500,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           </div>
           <a
             href="#difficulty"
-            className=" font-semibold max-[640px]:text-sm text-2xl border-solid border-2 border-blue-500 p-4 rounded-xl hover:bg-blue-500 hover:text-white  "
+            className={`font-semibold max-[640px]:text-sm text-2xl border-solid border-2  p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)] hover:bg-green-500  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] hover:bg-orange-500 border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] hover:bg-red-300 border-red-300 hover:text-red-300'} hover:text-white`} 
             onClick={nextQuestion}
           >
             Next Question
