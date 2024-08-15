@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 
-
-const JSChoicePage = () => {
-    const [selectDifficult, setSelectDifficult] = useState('')
+const ChoiceOfDifficult = () => {
+  const [selectDifficult, setSelectDifficult] = useState('')
 
     
 
@@ -13,19 +12,10 @@ const JSChoicePage = () => {
             <p onClick={() => setSelectDifficult('easy')} className=' min-w-[8rem] p-2 sm:p-4 px-8 cursor-pointer border-green-300 border-2 font-semibold text-sm sm:text-2xl text-green-400 hover:bg-green-400 hover:text-white rounded-xl'>Easy</p>
             <p onClick={() => setSelectDifficult('medium')} className=' min-w-[8rem] p-2 sm:p-4 px-8 cursor-pointer border-orange-500 border-2 font-semibold text-sm sm:text-2xl text-orange-500 hover:bg-orange-500 hover:text-white rounded-xl'>Medium</p>
             <p onClick={() => setSelectDifficult('hard')} className=' min-w-[8rem] p-2 sm:p-4 px-8 cursor-pointer border-red-300 border-2 font-semibold text-sm sm:text-2xl text-red-300 hover:bg-red-300 hover:text-white rounded-xl'>Hard</p>
+            <p onClick={() => setSelectDifficult('all')} className=' min-w-[8rem] p-2 sm:p-4 px-8 cursor-pointer border-blue-500 border-2 font-semibold text-sm sm:text-2xl text-blue-500 hover:bg-blue-500 hover:text-white rounded-xl'>All questions</p>
           </div>
-          
-            
-            <button
-            
-            className={`my-[20%] ${!selectDifficult && 'hidden'} font-semibold text-md sm:text-2xl border-solid border-2 border-blue-500 p-4 sm:p-8 rounded-xl hover:bg-blue-500 hover:text-white`}
-          >
-            Start Test
-          </button>
-          
-          
         </div>
       );
 }
 
-export default JSChoicePage
+export default ChoiceOfDifficult
