@@ -100,8 +100,9 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             <div className="text-start bg-transparent">
               <Link
                 to="/"
-                className=" bg-transparent text-sm border-green-500  border-solid border-2 hover:bg-green-500 hover:text-white p-2 rounded-xl"
+                className={`bg-transparent text-sm ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]  border-green-500 hover:text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] border-orange-500 hover:text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] border-red-300 hover:text-red-300'} border-green-500  border-solid border-2  hover:text-white p-2 rounded-xl`}
               >
+                
                 Back to HomePage
               </Link>
             </div>
@@ -114,7 +115,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           </div>
           <div className={`bg-[#292828] my-8 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
             {currentQuestion.initial_data && (
-              <p className="font-semibold text-white text-center text-wrap text-2xl my-2">
+              <p className={`font-semibold ${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'} text-center text-wrap text-2xl my-2`}>
                 You have:
                 <br />
                 <span className=" text-4xl">
@@ -126,28 +127,32 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             {currentQuestion.steps &&
               currentQuestion.steps.map((item: string, index: number) => (
                 <>
-                  <p className="font-semibold text-white text-center text-wrap text-2xl my-2">
-                    Step №{index + 1}
+                  <p className={`font-semibold text-center text-wrap text-2xl my-2`}>
+                    <span className={`${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'}`}>Step №{index + 1}</span>
                   </p>
-                  <p className=" text-4xl text-center font-semibold">
+                  <p className={`font-semibold text-center text-wrap text-2xl my-2`}>
                     {item}
                   </p>
                 </>
               ))}
 
             {currentQuestion.expected_result && (
-              <p className="font-semibold text-blue-800 text-center text-wrap text-2xl my-2">
+              <p className={`font-semibold ${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'} text-center text-wrap text-2xl my-2`}>
                 Expected result:
                 <br />
-                <span className="text-blue-800">
+                <span className="text-[#f5d52c]">
                   {currentQuestion?.expected_result}
                 </span>
               </p>
             )}
             {currentQuestion.task && (
-              <p className="font-semibold text-blue-500 text-center text-wrap text-2xl my-4 p-4 border-y-4">
+              <>
+              <p className="font-semibold text-red-500 text-center text-wrap text-2xl my-4 p-4 border-y-4">
                 {currentQuestion?.task}
               </p>
+
+              </>
+              
             )}
           </div>
 
