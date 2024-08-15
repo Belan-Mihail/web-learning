@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   
   return (
-    <div className="m-16 items-center flex flex-col gap-8 bg-[#222121] p-4 rounded-xl shd-white">
+    <div className="m-16 items-center flex flex-col gap-8 bg-[#222121] p-4 rounded-xl shd-white ">
       <h2 className=" font-bold text-2xl bg-transparent">What you would like to learn now???</h2>
       <Link
         to="js_test_page"

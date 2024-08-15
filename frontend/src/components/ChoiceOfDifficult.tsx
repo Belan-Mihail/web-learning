@@ -20,9 +20,9 @@ const ChoiceOfDifficult = ({setSelectedDifficult} : {setSelectedDifficult : Reac
   );
 
     return (
-        <div className="m-16 items-center flex flex-col gap-8 bg-[#222121] p-4 rounded-xl shd-white h-[80vh]">
+        <div className="m-16 items-center flex flex-col gap-8 bg-[#222121] p-4 rounded-xl shd-white h-[80vh] ">
           <h2 className=" bg-transparent font-bold text-md sm:text-2xl text-center flex-wrap">Select the difficulty of the questions</h2>
-          <div className=' shd-white bg-[#292828] p-8 h-[80%] rounded-xl lg:w-[50%] w-[30%] flex-col gap-4 text-center flex justify-around items-center'>
+          <div className=' shd-white bg-[#292828] p-8 h-[80%] rounded-xl min-w-[15rem] max-[450px]:min-w-[5rem] flex-col gap-4 text-center flex justify-around items-center'>
             <div>
               <p onClick={() => setSelectedDifficult('easy')} className=' min-w-[8rem] p-2 sm:p-4 px-8 cursor-pointer border-green-300 border-2 font-semibold text-sm sm:text-2xl text-green-400 hover:bg-green-400 hover:text-white rounded-xl hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)]'>Easy</p>
               <p className=' bg-transparent font-light text-sm'>Total question {easyQuestion.length + easyAdditionalTasks.length}</p>

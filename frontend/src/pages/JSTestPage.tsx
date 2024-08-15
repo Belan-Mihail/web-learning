@@ -27,6 +27,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
       ? JSdata.filter((item) => item.level === "hard")
       : JSdata;
 
+  
  
 
   const additionalTaskArr: string[] = [];
@@ -45,6 +46,8 @@ const JSTestPage: React.FC = (): React.ReactNode => {
     setShowExample(false);
     setAreaValue("");
   };
+
+  selectedDifficult.length > 1 && selectedDifficult !== 'all' && selectedDifficult !== currentQuestion.level ? nextQuestion() : ''
 
   const checkAnswer = (userAnswer: string) => {
     if (userAnswer !== currentQuestion.correctAnswer) {
@@ -71,7 +74,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
   return (
     <>
       {!selectedDifficult ? (
-        <ChoiceOfDifficult setSelectedDifficult={setSelectedDifficult} />
+        <ChoiceOfDifficult  setSelectedDifficult={setSelectedDifficult} />
       ) : (
         <div
           className={`m-8 items-center flex flex-col max-[500px]:gap-4 gap-8 bg-[#222121] p-4 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165)]'}`}
@@ -113,7 +116,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
               </span>
             </div>
           </div>
-          <div className={`bg-[#292828] my-8 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
+          <div className={`bg-[#292828] w-100% max-[450px]:w-[15rem] max-[450px]:p-4 max-[650px]:w-[20rem] max-[650px]:p-8 max-[650px]:mx-4 my-8 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
             {currentQuestion.initial_data && (
               <p className={`font-semibold ${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'} text-center text-wrap text-2xl my-2`}>
                 You have:
@@ -457,7 +460,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             </>
           )}
 
-          <div className={`flex flex-col gap-4 w-[40%] max-[720px]:w-[60%] max-[420px]:w-[70%] bg-[#292828] my-8 p-16 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
+          <div className={`flex flex-col gap-4  max-[450px]:w-[15rem] max-[450px]:p-4 max-[650px]:w-[20rem] max-[650px]:p-8 max-[650px]:mx-4 mx-16 p-16 bg-[#292828] my-8  rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
             <h3 className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl my-4">
               try to write the function/method in relation to the given data
               correctly
@@ -485,12 +488,12 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             {showExample && (
               <div>
                 {currentQuestion.example.length < 2 ? (
-                  <p className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl">
+                  <p className="font-semibold break-words text-center text-wrap max-[640px]:text-sm text-2xl">
                     {currentQuestion.example}
                   </p>
                 ) : (
                   currentQuestion.example.map((item: string) => (
-                    <p className="font-semibold text-center text-wrap max-[640px]:text-sm text-2xl">
+                    <p className="font-semibold break-words text-center text-wrap max-[640px]:text-sm text-2xl">
                       {item}
                     </p>
                   ))
