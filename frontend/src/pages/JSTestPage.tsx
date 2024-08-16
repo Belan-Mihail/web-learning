@@ -297,7 +297,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
 
           {currentAnswer && currentQuestion.additional_task && (
             <>
-              <p className="font-semibold text-blue-500 text-center text-wrap text-2xl my-4 p-4 border-y-4">
+              <p className="font-semibold text-red-500 text-center text-wrap text-2xl my-4 p-4 border-y-4">
                 {currentQuestion?.additional_task}
               </p>
 
