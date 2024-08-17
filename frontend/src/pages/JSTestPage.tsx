@@ -118,10 +118,10 @@ const JSTestPage: React.FC = (): React.ReactNode => {
           </div>
           <div className={`bg-[#292828] w-100% max-[450px]:w-[15rem] max-[450px]:p-4 max-[650px]:w-[20rem] max-[650px]:p-8 max-[650px]:mx-4 my-8 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
             {currentQuestion.initial_data && (
-              <p className={`font-semibold ${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'} text-center text-wrap text-2xl my-2`}>
+              <p className={`font-semibold max-[640px]:text-sm break-words ${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'} text-center break-words text-wrap text-2xl my-2`}>
                 You have:
                 <br />
-                <span className=" text-4xl">
+                <span className="max-[640px]:text-sm break-words text-2xl">
                   {currentQuestion?.initial_data}
                 </span>
               </p>
@@ -130,17 +130,17 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             {currentQuestion.steps &&
               currentQuestion.steps.map((item: string, index: number) => (
                 <>
-                  <p className={`font-semibold text-center text-wrap text-2xl my-2`}>
+                  <p className={`font-semibold break-words max-[640px]:text-sm text-center text-wrap text-2xl my-2`}>
                     <span className={`${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'}`}>Step №{index + 1}</span>
                   </p>
-                  <p className={`font-semibold text-center text-wrap text-2xl my-2`}>
+                  <p className={`font-semibold break-words max-[640px]:text-sm text-center text-wrap text-2xl my-2`}>
                     {item}
                   </p>
                 </>
               ))}
 
             {currentQuestion.expected_result && (
-              <p className={`font-semibold ${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'} text-center text-wrap text-2xl my-2`}>
+              <p className={`font-semibold break-words max-[640px]:text-sm ${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'} text-center text-wrap text-2xl my-2`}>
                 Expected result:
                 <br />
                 <span className="text-[#f5d52c]">
@@ -150,7 +150,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
             )}
             {currentQuestion.task && (
               <>
-              <p className="font-semibold text-red-500 text-center text-wrap text-2xl my-4 p-4 border-y-4">
+              <p className="font-semibold break-words max-[640px]:text-sm text-red-500 text-center text-wrap text-2xl my-4 p-4 border-y-4">
                 {currentQuestion?.task}
               </p>
 
@@ -297,11 +297,21 @@ const JSTestPage: React.FC = (): React.ReactNode => {
 
           {currentAnswer && currentQuestion.additional_task && (
             <>
-              <p className="font-semibold text-red-500 text-center text-wrap text-2xl my-4 p-4 border-y-4">
+            <div className={`bg-[#292828] w-100% max-[450px]:w-[15rem] max-[450px]:p-4 max-[650px]:w-[20rem] max-[650px]:p-8 max-[650px]:mx-4 my-8 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
+              
+              
+              <p className={`font-semibold max-[640px]:text-sm break-words ${currentQuestion.level === "easy" ? 'text-green-500' : currentQuestion.level === "medium" ? 'text-orange-500' : 'text-red-300'} text-center break-words text-wrap text-2xl my-2`}>
+              Additional Task:
+                <br />
+                <p className="font-semibold text-red-500 max-[640px]:text-sm break-words text-center text-wrap text-2xl my-4 p-4 border-y-4">
                 {currentQuestion?.additional_task}
               </p>
+              </p>
+            
+            </div>
+              
 
-              <div className="grid max-[640px]:grid-cols-1 max-[640px]:grid-rows-1 grid-cols-2 grid-rows-2 max-[500px]:gap-4 gap-8">
+              <div className={`grid max-[640px]:grid-cols-1 max-[640px]:grid-rows-1 grid-cols-2 grid-rows-2 max-[500px]:gap-4 gap-8 bg-[#292828] my-8 p-16 rounded-xl ${currentQuestion.level === "easy" ? 'shadow-[0_0_33px_10px_rgba(72,222,128,0.4)]' : currentQuestion.level === "medium" ? 'shadow-[0_0_33px_10px_rgba(249,115,22,0.4)]' : 'shadow-[0_0_33px_10px_rgba(252,165,165,0.4)]'}`}>
                 <button
                   onClick={() => {
                     setCurrentAddAnswer(currentQuestion!.add_variantA);
@@ -478,7 +488,7 @@ const JSTestPage: React.FC = (): React.ReactNode => {
               value={areaValue}
               onChange={(e) => setAreaValue(e.target.value)}
               placeholder="write here"
-              className="bg-gray-300 rounded-lg outline-orange-300"
+              className={`border-solid border-2 p-4 rounded-xl ${currentQuestion.level === "easy" ? 'hover:shadow-[0_0_33px_10px_rgba(72,222,128,0.3)] hover:outline-green-500  border-green-500 text-green-500' : currentQuestion.level === "medium" ? 'hover:shadow-[0_0_33px_10px_rgba(249,115,22,0.3)] hover:outline-orange-500 border-orange-500 text-orange-500' : 'hover:shadow-[0_0_33px_10px_rgba(252,165,165,0.3)] hover:outline-red-300 border-red-300 text-red-300'}`}
               cols={50}
               rows={10}
             ></textarea>
